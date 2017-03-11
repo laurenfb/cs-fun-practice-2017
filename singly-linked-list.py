@@ -1,3 +1,5 @@
+# linked list whattup
+
 class Node(object):
     def __init__(self, data, next_node=None):
         self.data = data
@@ -28,7 +30,25 @@ class LinkedList(object):
         print "added %s to linked list" % str(data)
         print self
 
+    def remove(self, data):
+        current = self.head
+        previous = None
+        while current is not None:
+            if current.data != data:
+                previous = current
+                current = current.next_node
+            else:
+                previous.next_node = current.next_node
+                current = None
+                print "removed %s from linked list" % str(data)
+        print self
+
 
 cat = LinkedList(1)
 print cat
 cat.add(12)
+cat.add(25)
+cat.add(239)
+cat.add(5)
+cat.remove(100)
+cat.remove(239)
