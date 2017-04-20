@@ -8,21 +8,13 @@ INPUT = ["1.11", "2.0.0", "1.2", "2", "0.1", "1.2.1", "1.1.1", "2.0"]
 # Output:
 OUTPUT =["0.1", "1.1.1", "1.2", "1.2.1", "1.11", "2", "2.0", "2.0.0"]
 
-def answer(l):
-    l = sorted(l)
-    print "first sorted l" + str(l)
-    l = sorted(l, cmp=custom_cmp)
-    print "second sorted l" + str(l)
 
 def custom_cmp(a,b):
-    "custom cmp"
-    # print a
-    # print b
-    a = a.split('.')
-    b = b.split('.')
     if a[0] == b[0]:
         return 0
     else:
+        a = a.split('.')
+        b = b.split('.')
         if len(a) == 1 or len(b) == 1:
             return 0
         if a[1] > b[1]:
@@ -32,6 +24,9 @@ def custom_cmp(a,b):
         else:
             return -1
 
+def answer(l):
+    l = sorted(l)
+    return sorted(l, cmp=custom_cmp)
 
 
 answer(INPUT)
