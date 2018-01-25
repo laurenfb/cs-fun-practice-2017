@@ -1,2 +1,3 @@
 # cs-fun-practice-2017
-practicing CS fundamentals during my 5-month internship at Ada Developers Academy
+
+a place to practice CS fundamentals whenever you remember that you need to interview again someday
